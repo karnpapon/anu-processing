@@ -9,18 +9,19 @@ Scene currentScene;
 Scene lastScene;
 int sceneIndex = 0;
 String sceneName = "texts";
-float currentMouseWheelCount;
 OscP5 oscP5;
 NetAddress myRemoteLocation;
 float oscA, oscB, oscC, oscD, oscE, oscRed, oscGreen, oscBlue, oscHit, oscFade;
 PImage type;
 
 void setup() {
+  fullScreen(P3D, 1);
   type = loadImage("data/poster.png");
-  surface.setTitle("");
+  surface.setTitle("-");
   surface.setResizable(true);
+  // surface.setSize(displayWidth, displayHeight);
+  // size(displayWidth, displayHeight, P3D);
   // surface.setAlwaysOnTop(true);
-  size(displayWidth, displayHeight, P3D);
 
   scenesHash = new HashMap<String, Scene>();
 
@@ -83,7 +84,8 @@ void draw() {
   lastScene = scene;
 
   push();
-  scale(0.85);
+  // scale(0.75); // if not fullscreen
+  scale(0.8); // if fullscreen
   image(type, 0, 0);
   pop();
   
@@ -114,14 +116,7 @@ void keyPressed() {
       currentScene = scenesList.get(sceneIndex); // scenesArray[sceneIndex];
       sceneName = currentScene.getName();
     }
-  } else {
-    // if (key == 32){
-    //   x++;
-    //   saveFrame("generic-" + year() + month() + day() + hour() + minute() + second() + millis() + ".png");
-    // } else if (key == ' ') {
-    //   doHit();
-    // }
-  }
+  } 
 }
 
 // void doHit() {
@@ -146,16 +141,6 @@ void doHitOsc() {
   scene.hit(HitData.Make(oscHit, oscA, oscB, oscC, oscD, oscE, oscFade, oscRed, oscGreen, oscBlue));
 }
 
-
-void mouseWheel(MouseEvent event) {
-  float e = event.getCount();
-  currentMouseWheelCount -= e;
-  if (currentMouseWheelCount < 0) {
-    currentMouseWheelCount = 0;
-  } else if (currentMouseWheelCount > 100) {
-    currentMouseWheelCount = 100;
-  }
-}
 
 public static class HitData {
   public float oscHit;

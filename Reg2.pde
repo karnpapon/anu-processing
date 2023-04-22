@@ -9,21 +9,12 @@ class Reg2 extends Scene {
   int currentRow = 0, currentCol = 0, rectWidth, rectHeight;
   Scene9Cell[][] table;
   PImage img1, img2;
-  boolean resetCam;
 
   Reg2() {
     name = "reg2";
     buildTable();
-    img1 = loadImage("computer.jpg");
-    img2 = loadImage("computer2.jpg");
-  }
-
-  void init(String oldSceneName) {
-    if (oldSceneName != "reg2") {
-      //cam.reset(0);
-      //buildTable();
-    }
-    resetCam = true;
+    img1 = loadImage("data/computer.jpg");
+    img2 = loadImage("data/computer2.jpg");
   }
 
   void buildTable() {
@@ -69,13 +60,6 @@ class Reg2 extends Scene {
 
 
   void draw2d() {
-
-    //preDraw2d();
-    
-    if (resetCam){
-      resetCam = false;
-      // camera();
-    }
 
     float hitVal;
     Scene9Cell cell;
@@ -131,7 +115,7 @@ public class Reg2B extends Reg2 {
   Reg2B() {
     name = "reg2B";
     buildTable();
-    img1 = loadImage("cat1.jpg");
-    img2 = loadImage("cat2.jpg");
+    img1 = loadImage("data/cat1.jpg");
+    img2 = loadImage("data/cat2.jpg");
   }
 }

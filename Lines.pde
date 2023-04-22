@@ -7,8 +7,6 @@ class Column {
   public Column(int x, int rectWidth) {
     this.x = x;
     this.rectWidth = rectWidth;
-    // this.rectHeight = rectHeight;
-    // this.numberOfrects = numberOfrects;
   }
 
   public void randomCol(int rectHeight, int numberOfrects){
@@ -82,50 +80,3 @@ public class Lines extends Scene {
     fadeAmount = fade;
   }
 }
-
-// public class Lines2 extends Scene {
-//   float opacity = 255;
-//   float fadeAmount;
-//   boolean high;
-//   int t = 1;
-
-//   String getName() {
-//     return "lines2";
-//   }
-
-//   void init(String oldSceneName) {
-//     frameRate(30);
-//     // fullScreen();
-//     // background(255); 
-//   }
-
-//   void draw2d() {
-//     float x = 10 * abs(sin(radians(t)));
-//     float y = 10 * abs(cos(radians(t)));
-//     for (int i = 0; i < width; i++)  {
-//           stroke(x*(sin(sin(t+i))));
-//           line(i,0,i,height/2);
-//           // stroke(y*(cos(t*sin(t+i))));
-//           // line(i,height/2,i,height);
-//     }
-//     t++;
-//   }
-
-//   void postDraw(){
-//   }
-
-//   void hit(HitData data) {
-//     float hitVal = data.oscHit;
-//     float a = data.oscA;
-//     float b = data.oscB;
-//     float c = data.oscC;
-//     float d = data.oscD;
-//     float fade = data.oscFade;
-
-//     high = hitVal > 0.5;
-//     opacity = 255;
-//     fadeAmount = fade;
-//   }
-
-
-// }
