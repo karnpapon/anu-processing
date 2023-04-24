@@ -15,12 +15,12 @@ float oscA, oscB, oscC, oscD, oscE, oscRed, oscGreen, oscBlue, oscHit, oscFade;
 PImage type;
 
 void setup() {
-  fullScreen(P3D, 1);
+  // fullScreen(P3D, 1);
   type = loadImage("data/poster.png");
   surface.setTitle("-");
   surface.setResizable(true);
   // surface.setSize(displayWidth, displayHeight);
-  // size(displayWidth, displayHeight, P3D);
+  size(displayWidth, displayHeight, P3D);
   // surface.setAlwaysOnTop(true);
 
   scenesHash = new HashMap<String, Scene>();
@@ -30,6 +30,9 @@ void setup() {
   scenesList.add(new Maze());
   scenesList.add(new Lines());
   scenesList.add(new Texts());
+  scenesList.add(new Texts2());
+  scenesList.add(new Texts3());
+  scenesList.add(new Texts4());
   scenesList.add(new CubeGrid());
 
   for (int i = 0; i < scenesList.size(); i++) {

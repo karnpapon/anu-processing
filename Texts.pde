@@ -53,3 +53,105 @@ class Texts extends Scene {
   }
 
 }
+
+class Texts2 extends Texts {
+  PFont font;
+  int index = 0;
+  String[] words = {"อนุภาค","อนุพันธ์","อนุชน","อนุวัต", "อนุกรม", "อนุชา", "อนุตร","อนุมูล","อนุศาสน์"};
+  
+  String getName() {
+    return "texts2";
+  }
+
+  void init(String oldSceneName) {
+    font = createFont("data/ChakraPetch-Bold.ttf",250);
+    textFont(font);
+    textSize(200);
+    fill(0, 0, 0);
+    text(words[index],0, 0);
+  }
+
+  void hit(HitData data) {
+    float hitVal = data.oscHit;
+    float a = data.oscA;
+    float b = data.oscB;
+    float c = data.oscC;
+    float d = data.oscD;
+    float fade = data.oscFade;
+
+    high = hitVal > 0.5;
+
+    index = (index + 1) % words.length;
+
+    opacity = 255;
+    fadeAmount = fade;
+  }
+}
+
+class Texts3 extends Texts {
+  PFont font;
+  int index = 0;
+  String[] words = {"อนุภาค","อนุพันธ์","อนุชน","อนุวัต", "อนุกรม", "อนุชา", "อนุตร","อนุมูล","อนุศาสน์"};
+  
+  String getName() {
+    return "texts3";
+  }
+
+  void init(String oldSceneName) {
+    font = createFont("data/Chonburi-Regular.ttf",250);
+    textFont(font);
+    textSize(200);
+    fill(0, 0, 0);
+    text(words[index],0, 0);
+  }
+
+  void hit(HitData data) {
+    float hitVal = data.oscHit;
+    float a = data.oscA;
+    float b = data.oscB;
+    float c = data.oscC;
+    float d = data.oscD;
+    float fade = data.oscFade;
+
+    high = hitVal > 0.5;
+
+    index = (index + 1) % words.length;
+
+    opacity = 255;
+    fadeAmount = fade;
+  }
+}
+
+class Texts4 extends Texts {
+  PFont font;
+  int index = 0;
+  String[] words = {"อนุภาค","อนุพันธ์","อนุชน","อนุวัต", "อนุกรม", "อนุชา", "อนุตร","อนุมูล","อนุศาสน์"};
+  
+  String getName() {
+    return "texts4";
+  }
+
+  void init(String oldSceneName) {
+    font = createFont("data/Srisakdi-Bold.ttf",250);
+    textFont(font);
+    textSize(200);
+    fill(0, 0, 0);
+    text(words[index],0, 0);
+  }
+
+  void hit(HitData data) {
+    float hitVal = data.oscHit;
+    float a = data.oscA;
+    float b = data.oscB;
+    float c = data.oscC;
+    float d = data.oscD;
+    float fade = data.oscFade;
+
+    high = hitVal > 0.5;
+
+    index = (index + 1) % words.length;
+
+    opacity = 255;
+    fadeAmount = fade;
+  }
+}
